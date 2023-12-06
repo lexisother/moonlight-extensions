@@ -5,12 +5,21 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node build.mjs --watch",
-    "repo": "node repo.mjs"
+    "repo": "node repo.mjs",
+    "format": "prettier -w src/**/*.{ts,tsx} || true"
   },
   "devDependencies": {
     "@electron/asar": "^3.2.8",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
     "esbuild": "^0.19.3",
-    "esbuild-copy-static-files": "^0.1.0"
+    "esbuild-copy-static-files": "^0.1.0",
+    "eslint": "^8.55.0",
+    "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.0"
   },
   "dependencies": {
     "@moonlight-mod/types": "^1.0.0"
