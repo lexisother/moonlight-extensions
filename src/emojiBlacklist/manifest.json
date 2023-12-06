@@ -1,0 +1,18 @@
+{
+  "id": "emojiBlacklist",
+  "version": "1.0.0",
+  "meta": {
+    "name": "Emoji Blacklist",
+    "description": "Allows blacklisting of certain emojis from the autocompletion window.",
+    "authors": ["Alyxia Sother"],
+    "source": "https://github.com/lexisother/moonlight-extensions/tree/master/src/emojiBlacklist"
+  },
+  "settings": {
+    "addToGlobalScope": {
+      "displayName": "Emoji IDs",
+      "description": "Emoji IDs to blacklist",
+      "type": "list",
+      "default": []
+    }
+  }
+}
