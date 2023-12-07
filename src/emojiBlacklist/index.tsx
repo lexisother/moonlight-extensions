@@ -10,7 +10,7 @@ export const patches: Patch[] = [
     replace: {
       match: /(return{unlocked:this\.getSearchResultsOrder\()(.{1,2}?)/,
       replacement: (_, orig, container) =>
-        `${container}.unlocked=__hh2_require("emojiBlacklist_filterEmojis").default(${container}.unlocked);${orig}${container}`
+        `${container}.unlocked=require("emojiBlacklist_filterEmojis").default(${container}.unlocked);${orig}${container}`
     }
   }
 ];
