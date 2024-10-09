@@ -1,6 +1,7 @@
 {
   "id": "noInlineLinks",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "apiLevel": 2,
   "meta": {
     "name": "No Inline Links",
     "description": "Removes inline Markdown links.",

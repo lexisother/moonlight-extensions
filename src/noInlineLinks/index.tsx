@@ -2,10 +2,10 @@ import { Patch } from "@moonlight-mod/types";
 
 export const patches: Patch[] = [
   {
-    find: /childrenExecutedCommand:/,
+    find: /allowLinks:.{1,2},/,
     replace: {
-      match: /allowLinks:.{1,2}\.showMaskedLinks\|\|.{1,2}\.showMaskedLinks/g,
-      replacement: () => "allowLinks:false"
+      match: /allowLinks:.{1,2},/,
+      replacement: () => "allowLinks:false,"
     }
   }
 ];

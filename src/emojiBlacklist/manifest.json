@@ -1,6 +1,7 @@
 {
   "id": "emojiBlacklist",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "apiLevel": 2,
   "meta": {
     "name": "Emoji Blacklist",
     "description": "Allows blacklisting of certain emojis from the autocompletion window.",
