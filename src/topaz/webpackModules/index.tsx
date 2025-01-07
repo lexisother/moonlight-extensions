@@ -1,70 +1,94 @@
 import Settings from "@moonlight-mod/wp/settings_settings";
 import React from "@moonlight-mod/wp/react";
 import {
-  FormDivider,
-  FormTitle,
+  Text,
   TabBar
 } from "@moonlight-mod/wp/discord/components/common/index";
 import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
+import { UserSettingsModalStore } from "@moonlight-mod/wp/common_stores";
+import { useStateFromStores } from "@moonlight-mod/wp/discord/packages/flux";
 
+// functions
+const { setSection, clearSubsection } = spacepack.findByExports(
+  "setSection",
+  "clearSubsection"
+)[0].exports.Z;
+
+// components
 const { Divider } = spacepack.findByCode(".forumOrHome]:")[0].exports.Z;
 
-const ContainerClasses = spacepack.findByExports("upperContainer")[0].exports;
-const HeaderClasses = spacepack.findByExports("title", "titleWrapper")[0]
+// classes
+const Margins = spacepack.require("discord/styles/shared/Margins.css");
+const TitleBarClasses = spacepack.findByCode("iconWrapper:", "children:")[0]
   .exports;
-const TabBarClasses1 = spacepack.findByExports("topPill")[0].exports;
-const TabBarClasses2 = spacepack.findByCode("nowPlayingColumn:")[0].exports;
+const TabBarClasses = spacepack.findByCode("nowPlayingColumn:")[0].exports;
+
+export const pages: {
+  id: string;
+  name: string;
+  element: React.FunctionComponent;
+}[] = [
+  {
+    id: "snippets",
+    name: "Snippets",
+    element: () => <div>snippets</div>
+  },
+  {
+    id: "settings",
+    name: "Settings",
+    element: () => <div>settings</div>
+  }
+];
 
 function TopazPage(): JSX.Element {
-  const [selectedTab, setSelectedTab] = React.useState("snippets");
+  const subsection = useStateFromStores(
+    [UserSettingsModalStore],
+    () => UserSettingsModalStore.getSubsection() ?? 0
+  );
+  const setSubsection = React.useCallback(
+    (to: string) => {
+      if (subsection !== to) setSection("topaz", to);
+    },
+    [subsection]
+  );
+
+  React.useEffect(
+    () => () => {
+      clearSubsection("topaz");
+    },
+    []
+  );
 
   return (
-    <div>
-      <div
-        className={ContainerClasses.upperContainer}
-        style={{ marginBottom: "1rem" }}
-      >
-        <div className={HeaderClasses.titleWrapper}>
-          {/* @ts-expect-error error in mappings */}
-          <FormTitle tag="h1" style={{ marginBottom: "0px" }}>
-            Topaz
-          </FormTitle>
-        </div>
-
-        <Divider />
-
-        <TabBar
-          selectedItem={selectedTab}
-          type={TabBarClasses1.topPill}
-          className={`${TabBarClasses1.topPill} ${TabBarClasses2.tabBar}`}
-          onItemSelect={(x: string) => {
-            console.log("FUUUUUUUUUCK", x);
-            setSelectedTab(x);
-          }}
+    <>
+      <div className={`${TitleBarClasses.children} ${Margins.marginBottom20}`}>
+        <Text
+          className={TitleBarClasses.titleWrapper}
+          variant="heading-lg/semibold"
+          tag="h2"
         >
-          <TabBar.Item
-            id="snippets"
-            className={`${TabBarClasses1.themed} ${TabBarClasses2.item}`}
-          >
-            Snippets
-          </TabBar.Item>
-          <TabBar.Item
-            id="settings"
-            className={`${TabBarClasses1.themed} ${TabBarClasses2.item}`}
-          >
-            Settings
-          </TabBar.Item>
+          Topaz
+        </Text>
+        <Divider />
+        <TabBar
+          selectedItem={subsection}
+          onItemSelect={setSubsection}
+          type="top-pill"
+          className={TabBarClasses.tabBar}
+        >
+          {pages.map((page, i) => (
+            <TabBar.Item key={page.id} id={i} className={TabBarClasses.item}>
+              {page.name}
+            </TabBar.Item>
+          ))}
         </TabBar>
       </div>
 
-      {selectedTab == "snippets" && <div>snippets</div>}
-      {selectedTab == "settings" && <div>settings</div>}
-    </div>
+      {React.createElement(pages[subsection].element)}
+    </>
   );
 }
 
 Settings.addHeader("Topaz", null);
 Settings.addSection("topaz", "Topaz", TopazPage);
 Settings.addDivider(null);
-
-console.log("FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
