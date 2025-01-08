@@ -7,6 +7,7 @@ import {
 import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
 import { UserSettingsModalStore } from "@moonlight-mod/wp/common_stores";
 import { useStateFromStores } from "@moonlight-mod/wp/discord/packages/flux";
+import Moonbase from "@moonlight-mod/wp/moonbase_moonbase";
 
 // functions
 const { setSection, clearSubsection } = spacepack.findByExports(
@@ -40,7 +41,7 @@ export const pages: {
   }
 ];
 
-function TopazPage(): JSX.Element {
+function TopazPage(): React.JSX.Element {
   const subsection = useStateFromStores(
     [UserSettingsModalStore],
     () => UserSettingsModalStore.getSubsection() ?? 0
@@ -92,3 +93,6 @@ function TopazPage(): JSX.Element {
 Settings.addHeader("Topaz", null);
 Settings.addSection("topaz", "Topaz", TopazPage);
 Settings.addDivider(null);
+
+// Remove the warning about a lacking custom component
+Moonbase.registerConfigComponent("topaz", "settings", () => <></>);

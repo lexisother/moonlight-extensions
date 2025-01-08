@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types"
+    "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types",
+    "nests": "^2.3.1"
   }
 }

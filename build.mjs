@@ -14,6 +14,7 @@ if (clean) {
     const cfg = {
       src: path.resolve(path.join("src", ext)),
       dst: path.resolve(path.join("dist", ext)),
+      extraExternal: ["react"],
       ext
     };
 
