@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@electron/asar": "^3.2.8",
+    "@moonlight-mod/esbuild-config": "github:moonlight-mod/esbuild-config",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "esbuild": "^0.19.3",
@@ -22,6 +23,6 @@
     "prettier": "^3.1.0"
   },
   "dependencies": {
-    "@moonlight-mod/types": "^1.2.0"
+    "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types"
   }
 }

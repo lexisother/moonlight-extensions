@@ -9,12 +9,15 @@ importers:
   .:
     dependencies:
       '@moonlight-mod/types':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: github:moonlight-mod/moonlight#develop&path:packages/types
+        version: https://codeload.github.com/moonlight-mod/moonlight/tar.gz/86fe1bcf47dd5146eb5ae29d3c2ebc60f3fc9b2f#path:packages/types
     devDependencies:
       '@electron/asar':
         specifier: ^3.2.8
         version: 3.2.8
+      '@moonlight-mod/esbuild-config':
+        specifier: github:moonlight-mod/esbuild-config
+        version: https://codeload.github.com/moonlight-mod/esbuild-config/tar.gz/02870fc496658fe67c033d46c14be33425d4f122(esbuild@0.19.3)
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.13.2
         version: 6.13.2(@typescript-eslint/parser@6.13.2(eslint@8.55.0)(typescript@5.3.3))(eslint@8.55.0)(typescript@5.3.3)
@@ -218,20 +221,27 @@ packages:
   '@humanwhocodes/object-schema@2.0.1':
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
 
+  '@moonlight-mod/esbuild-config@https://codeload.github.com/moonlight-mod/esbuild-config/tar.gz/02870fc496658fe67c033d46c14be33425d4f122':
+    resolution: {tarball: https://codeload.github.com/moonlight-mod/esbuild-config/tar.gz/02870fc496658fe67c033d46c14be33425d4f122}
+    version: 1.0.0
+    peerDependencies:
+      esbuild: '>= 0.19'
+
   '@moonlight-mod/lunast@1.0.0':
     resolution: {integrity: sha512-kJgf41K12i6/2LbXK97CNO+pNO7ADGh9N4bCQcOPwosocKMcwKHDEZUgPqeihNshY3c3AEW1LiyXjlsl24PdDw==}
 
-  '@moonlight-mod/mappings@1.0.2':
-    resolution: {integrity: sha512-PjIv4LFyt3j4LyGiokUmJ6a0L5JljoLXjUkixCynLLpNLd660qTcLe8f9tbhOovvD8joqejq+f5oqSo2V4/Vfg==}
+  '@moonlight-mod/mappings@1.0.10':
+    resolution: {integrity: sha512-L04To4MhlxOWxvvfVIRwj7d8H5qHthjUfikSx9WMk60qt67+6dFzN9CoAG9uG5l1B27IIEG3voVXBr0oSkooYw==}
     peerDependencies:
       '@moonlight-mod/lunast': ^1.0.0
       '@moonlight-mod/moonmap': ^1.0.0
 
-  '@moonlight-mod/moonmap@1.0.2':
-    resolution: {integrity: sha512-dqMFwk8o0duRfvBNYo6EwalEUWWR3bNF5V2N04ogHp4gYON6/5+XOUrTlQ9BFBDj9anZwGgVwGqnxV42Qs9pPw==}
+  '@moonlight-mod/moonmap@1.0.3':
+    resolution: {integrity: sha512-G7pwvrcVDimc388IX6VZFzBXpbuyvqbJ+w9/v+MUIc8P7dADJXQ9YkBWvobtRc6eaBBl1FWUwTeU8oobbxLVag==}
 
-  '@moonlight-mod/types@1.2.0':
-    resolution: {integrity: sha512-XlysDTSnWD/2LrUE/t8MVOnU2shARmMnd+cyipQF6+FJ+gsOOBq43j6Lx/MqObs8MnQ1NwK8UTTuv3SCmIyMHw==}
+  '@moonlight-mod/types@https://codeload.github.com/moonlight-mod/moonlight/tar.gz/86fe1bcf47dd5146eb5ae29d3c2ebc60f3fc9b2f#path:packages/types':
+    resolution: {path: packages/types, tarball: https://codeload.github.com/moonlight-mod/moonlight/tar.gz/86fe1bcf47dd5146eb5ae29d3c2ebc60f3fc9b2f}
+    version: 1.3.3
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -272,6 +282,9 @@ packages:
 
   '@types/react@18.3.11':
     resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
+
+  '@types/react@19.0.3':
+    resolution: {integrity: sha512-UavfHguIjnnuq9O67uXfgy/h3SRJbidAYvNjLceB+2RIKVRBzVsh0QO+Pw6BCSQqFS9xwzKfwstXx0m6AbAREA==}
 
   '@types/semver@7.5.6':
     resolution: {integrity: sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==}
@@ -416,9 +429,6 @@ packages:
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
-
-  csstype@3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
@@ -1114,29 +1124,33 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.1': {}
 
+  '@moonlight-mod/esbuild-config@https://codeload.github.com/moonlight-mod/esbuild-config/tar.gz/02870fc496658fe67c033d46c14be33425d4f122(esbuild@0.19.3)':
+    dependencies:
+      esbuild: 0.19.3
+
   '@moonlight-mod/lunast@1.0.0':
     dependencies:
       astring: 1.9.0
       estree-toolkit: 1.7.8
       meriyah: 6.0.2
 
-  '@moonlight-mod/mappings@1.0.2(@moonlight-mod/lunast@1.0.0)(@moonlight-mod/moonmap@1.0.2)':
+  '@moonlight-mod/mappings@1.0.10(@moonlight-mod/lunast@1.0.0)(@moonlight-mod/moonmap@1.0.3)':
     dependencies:
       '@moonlight-mod/lunast': 1.0.0
-      '@moonlight-mod/moonmap': 1.0.2
+      '@moonlight-mod/moonmap': 1.0.3
       '@types/flux': 3.1.14
       '@types/react': 18.3.11
       csstype: 3.1.3
 
-  '@moonlight-mod/moonmap@1.0.2': {}
+  '@moonlight-mod/moonmap@1.0.3': {}
 
-  '@moonlight-mod/types@1.2.0':
+  '@moonlight-mod/types@https://codeload.github.com/moonlight-mod/moonlight/tar.gz/86fe1bcf47dd5146eb5ae29d3c2ebc60f3fc9b2f#path:packages/types':
     dependencies:
       '@moonlight-mod/lunast': 1.0.0
-      '@moonlight-mod/mappings': 1.0.2(@moonlight-mod/lunast@1.0.0)(@moonlight-mod/moonmap@1.0.2)
-      '@moonlight-mod/moonmap': 1.0.2
+      '@moonlight-mod/mappings': 1.0.10(@moonlight-mod/lunast@1.0.0)(@moonlight-mod/moonmap@1.0.3)
+      '@moonlight-mod/moonmap': 1.0.3
       '@types/react': 18.3.11
-      csstype: 3.1.2
+      csstype: 3.1.3
       standalone-electron-types: 1.0.0
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1171,7 +1185,7 @@ snapshots:
   '@types/flux@3.1.14':
     dependencies:
       '@types/fbemitter': 2.0.35
-      '@types/react': 18.3.11
+      '@types/react': 19.0.3
 
   '@types/json-schema@7.0.15': {}
 
@@ -1184,7 +1198,11 @@ snapshots:
   '@types/react@18.3.11':
     dependencies:
       '@types/prop-types': 15.7.11
-      csstype: 3.1.2
+      csstype: 3.1.3
+
+  '@types/react@19.0.3':
+    dependencies:
+      csstype: 3.1.3
 
   '@types/semver@7.5.6': {}
 
@@ -1343,8 +1361,6 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  csstype@3.1.2: {}
 
   csstype@3.1.3: {}
 
