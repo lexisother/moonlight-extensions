@@ -23,6 +23,7 @@
     "prettier": "^3.1.0"
   },
   "dependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types"
   }
 }
