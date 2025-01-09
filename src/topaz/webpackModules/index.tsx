@@ -9,6 +9,9 @@ import { UserSettingsModalStore } from "@moonlight-mod/wp/common_stores";
 import { useStateFromStores } from "@moonlight-mod/wp/discord/packages/flux";
 import Moonbase from "@moonlight-mod/wp/moonbase_moonbase";
 
+import SnippetsPage from "./pages/snippets";
+import SettingsPage from "./pages/settings";
+
 // functions
 const { setSection, clearSubsection } = spacepack.findByExports(
   "setSection",
@@ -32,12 +35,12 @@ export const pages: {
   {
     id: "snippets",
     name: "Snippets",
-    element: () => <div>snippets</div>
+    element: SnippetsPage
   },
   {
     id: "settings",
     name: "Settings",
-    element: () => <div>settings</div>
+    element: SettingsPage
   }
 ];
 

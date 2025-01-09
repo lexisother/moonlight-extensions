@@ -82,7 +82,7 @@
         "useThrowOnlyError": "error"
       },
       "suspicious": {
-        "noAssignInExpressions": "error",
+        "noAssignInExpressions": "info",
         "noAsyncPromiseExecutor": "error",
         "noCatchAssign": "error",
         "noClassAssign": "error",

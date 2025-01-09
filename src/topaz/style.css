@@ -1,0 +1,289 @@
+.topaz-editor-focus .contentColumn-1C7as6.contentColumnDefault-3eyv5o {
+  max-width: calc(100vw - 270px);
+  padding-bottom: 0;
+}
+
+.contentColumn-1C7as6.contentColumnDefault-3eyv5o {
+  transition: max-width 0.5s;
+}
+
+.topaz-editor-focus .contentRegion-3HkfJJ {
+  flex: 1 1 80%;
+}
+
+.contentRegion-3HkfJJ {
+  transition: flex 0.5s;
+}
+
+.topaz-editor-focus .sidebarRegion-1VBisG {
+  flex: 1 0 0;
+}
+
+.sidebarRegion-1VBisG {
+  transition: flex 0.5s;
+}
+
+.topaz-editor-focus .toolsContainer-25FL6V {
+  top: -50px;
+}
+
+.toolsContainer-25FL6V {
+  transition: top 0.5s;
+}
+
+.topaz-editor-focus .contentRegionScroller-2_GT_N {
+  overflow: visible;
+}
+
+.topaz-editor > * {
+  width: 100%;
+}
+
+.topaz-editor-focus .topaz-editor > * {
+  width: calc(100vw - 308px) !important;
+}
+
+.topaz-editor > section {
+  height: 88vh !important;
+}
+
+.topaz-editor-no-files {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  background: var(--background-tertiary);
+}
+
+.topaz-editor-no-files > :first-child {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: var(--font-display);
+  color: var(--header-primary);
+}
+
+.topaz-editor-no-files > :nth-child(2) {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-normal);
+}
+
+.topaz-editor-no-files svg {
+  vertical-align: text-bottom;
+  color: var(--text-muted);
+
+  margin: 0 2px;
+}
+
+.topaz-editor > [role="tablist"] {
+  overflow: auto hidden;
+}
+
+.topaz-editor > [role="tablist"] > [aria-label="New"],
+.topaz-editor > [role="tablist"] > [aria-label="Library"],
+.topaz-editor > [role="tablist"] > [aria-label="Settings"],
+.topaz-editor > [role="tablist"] > [aria-label="Reload"] {
+  position: absolute;
+  right: 0px;
+  padding: 3px;
+}
+
+.topaz-editor > [role="tablist"] > [aria-label="New"],
+.topaz-editor > [role="tablist"] > [aria-label="Library"] {
+  right: unset;
+  position: unset;
+
+  padding: 8px 6px;
+}
+
+.topaz-editor > [role="tablist"] > [aria-label="Settings"] {
+  border-radius: 0 8px 0 0;
+}
+
+.topaz-editor > [role="tablist"] > [aria-label="Reload"] {
+  right: 40px;
+  border-radius: 8px 0 0 0;
+  border-left: none;
+}
+
+.topaz-editor > [role="tablist"] > div {
+  background: var(--background-secondary-alt);
+
+  padding: 8px 4px 8px 12px;
+  height: 40px;
+}
+
+.topaz-editor > [role="tablist"] > div > input {
+  background: none;
+  border: none;
+
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+
+  cursor: default;
+}
+
+.topaz-editor > [role="tablist"] > div > input:active {
+  cursor: text;
+}
+
+.topaz-editor input[type="text"]::-webkit-search-decoration,
+.topaz-editor input[type="text"]::-webkit-search-cancel-button,
+.topaz-editor input[type="text"]::-webkit-search-results-button,
+.topaz-editor input[type="text"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.topaz-editor > [role="tablist"] > * > [aria-haspopup="listbox"] {
+  padding: 0;
+  background: none;
+  border: none;
+
+  margin-left: -6px;
+  margin-right: 4px;
+}
+
+.topaz-editor > [role="tablist"] > * > [aria-haspopup="listbox"] > :last-child {
+  display: none;
+}
+
+.topaz-editor > [role="tablist"] > * > input {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.topaz-editor > [role="tablist"] > * > :last-child:not(:first-child) {
+  margin-left: 6px;
+}
+
+.topaz-editor > [role="tablist"] > * {
+  flex-shrink: 0;
+}
+
+.topaz-editor > [role="tablist"] > * > [aria-label="Delete"] svg {
+  width: 18px;
+  height: 18px;
+}
+
+.topaz-editor > [role="tablist"] > * > [aria-label="Delete"]:hover {
+  color: var(--status-danger);
+}
+
+.topaz-editor > [role="tablist"] > div:not(:first-child) {
+  border-left: 1px solid var(--background-secondary);
+}
+
+.topaz-editor > [role="tablist"] > div[aria-selected="true"] {
+  color: var(--interactive-active) !important;
+  background: var(--background-floating);
+}
+.topaz-editor > [role="tablist"] > div:not([aria-selected="true"]) {
+  color: var(--interactive-normal) !important;
+}
+
+.topaz-editor-page {
+  top: -30px;
+  position: relative;
+}
+
+/* Rounding edges for border files */
+.topaz-editor > [role="tablist"] > div:first-child {
+  /* First */
+  border-radius: 8px 0 0 0;
+}
+
+.topaz-editor > [role="tablist"] > div:nth-last-child(3) {
+  /* Last */
+  border-radius: 0 8px 0 0;
+}
+
+.topaz-snippets > .topaz-editor {
+  display: flex;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] {
+  flex-direction: column;
+  background: var(--background-secondary-alt);
+  width: 260px !important;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > * {
+  border-radius: 0 !important;
+  border-bottom: none;
+}
+
+.topaz-snippets
+  > .topaz-editor
+  > [role="tablist"]
+  > :not([aria-label="New"]):not([aria-label="Library"]):not(
+    [aria-label="Settings"]
+  ):not([aria-label="Reload"]) {
+  border-left: 2px solid transparent;
+  padding: 8px 4px 8px 16px;
+  border-bottom: 1px solid var(--background-primary) !important;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > [class*="selected__"] {
+  border-left-color: var(--control-brand-foreground) !important;
+}
+
+.topaz-snippets > .topaz-editor [role="tablist"] > [aria-label="New"],
+.topaz-snippets > .topaz-editor [role="tablist"] > [aria-label="Library"],
+.topaz-snippets > .topaz-editor [role="tablist"] > [aria-label="Settings"],
+.topaz-snippets > .topaz-editor [role="tablist"] > [aria-label="Reload"] {
+  bottom: 0;
+  border-left: none;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > [aria-label="Settings"] {
+  border-radius: 8px 0 0 0 !important;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > [aria-label="New"] button,
+.topaz-snippets
+  > .topaz-editor
+  > [role="tablist"]
+  > [aria-label="Library"]
+  button {
+  width: 100%;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > [aria-label="Library"] {
+  position: relative;
+  left: 50%;
+  transform: translateY(-100%);
+  border-left: 1px solid var(--background-secondary);
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] > [aria-label="Reload"] {
+  display: none;
+}
+
+.topaz-snippets > .topaz-editor > section {
+  width: calc(100% - 260px) !important;
+}
+
+.topaz-snippets > .topaz-editor > [role="tablist"] .input-2XRLou {
+  position: relative;
+  top: -3px;
+  left: -4px;
+}
+
+.topaz-snippets-tooltip-bottom {
+  transform: translateY(100%) !important;
+  top: 44px;
+}
+
+.topaz-snippets-tooltip-bottom [class^="tooltipPointer"] {
+  top: -10px;
+}
