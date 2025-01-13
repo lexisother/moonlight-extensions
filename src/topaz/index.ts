@@ -7,12 +7,17 @@ export const webpackModules: Record<string, ExtensionWebpackModule> = {
   index: {
     entrypoint: true,
     dependencies: [
-      { ext: "topaz", id: "storage" },
+      // Core requirements
+      { ext: "moonbase", id: "settings" },
       { ext: "spacepack", id: "spacepack" },
       { ext: "settings", id: "settings" },
+
+      // Ours
+      { ext: "topaz", id: "storage" },
+
+      // Finds
       { id: "react" },
       { id: "discord/components/common/index" },
-      { ext: "moonbase", id: "moonbase" },
       // TODO: figure out which of these can go
       { id: "discord/modules/guild_settings/IntegrationCard.css" },
       ".forumOrHome]:"
