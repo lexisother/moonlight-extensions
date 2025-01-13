@@ -2,6 +2,12 @@ import React from "@moonlight-mod/wp/react";
 import * as Components from "@moonlight-mod/wp/discord/components/common/index";
 import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
 import nest, { useNest } from "@moonlight-mod/wp/topaz_storage";
+import { TopazNatives } from "../../types";
+
+const AceEditor =
+  (moonlight.getNatives("topaz") as TopazNatives).loadAce()?.default ||
+  // @ts-ignore
+  window.ReactAce?.default;
 
 type E = React.ComponentType<any>;
 const {
@@ -23,6 +29,7 @@ const Margins = spacepack.require("discord/styles/shared/Margins.css");
 
 let ignoreNextSelect = false;
 export default function SnippetsPage(): React.JSX.Element {
+  console.log(AceEditor);
   const settings = useNest(nest);
 
   const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
@@ -137,6 +144,35 @@ export default function SnippetsPage(): React.JSX.Element {
             />
           </TabBar.Item>
         </TabBar>
+
+        {nest.ghost.files[openFile] === undefined ? (
+          <section className="topaz-editor-no-files">
+            <div>You have no snippets.</div>
+            <div>
+              Make a snippet with the <PlusLargeIcon width={20} height={20} />{" "}
+              icon in the sidebar.
+            </div>
+          </section>
+        ) : (
+          <>
+            {AceEditor ? (
+              <AceEditor
+                mode={nest.ghost.files[openFile].mode}
+                theme="tomorrow_night"
+                name="topaz-editor"
+                value={nest.ghost.files[openFile].value}
+                setOptions={{ useWorker: false }}
+                onChange={(value: string) => {
+                  nest.store.files[openFile].value = value;
+                }}
+                width="75%"
+                height="75vh"
+              />
+            ) : (
+              <FormSection tag="h1">AceEditor failed to load.</FormSection>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
