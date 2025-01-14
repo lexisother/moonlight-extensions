@@ -1,7 +1,8 @@
-import React from "@moonlight-mod/wp/react";
 import * as Components from "@moonlight-mod/wp/discord/components/common/index";
+import React from "@moonlight-mod/wp/react";
 import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
-import nest, { useNest } from "@moonlight-mod/wp/topaz_storage";
+import nest from "@moonlight-mod/wp/topaz_storage";
+import { useNest } from "@moonlight-mod/wp/nests_nests";
 import { TopazNatives } from "../../types";
 
 const AceEditor =
@@ -94,6 +95,7 @@ export default function SnippetsPage(): React.JSX.Element {
               <Switch
                 checked={nest.ghost.files[x].enabled}
                 onChange={(_) =>
+                  // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
                   (nest.store.files[x].enabled = !nest.ghost.files[x].enabled)
                 }
               />

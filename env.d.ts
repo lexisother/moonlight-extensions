@@ -16,7 +16,6 @@ declare module "@moonlight-mod/wp/topaz_storage" {
     >;
   }
 
-  export { useNest } from "nests/react";
   export default nest as _nests.Nest<Settings>;
 }
 

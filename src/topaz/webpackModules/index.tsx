@@ -1,16 +1,16 @@
-import Settings from "@moonlight-mod/wp/settings_settings";
-import React from "@moonlight-mod/wp/react";
-import {
-  Text,
-  TabBar
-} from "@moonlight-mod/wp/discord/components/common/index";
-import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
 import { UserSettingsModalStore } from "@moonlight-mod/wp/common_stores";
+import {
+  TabBar,
+  Text
+} from "@moonlight-mod/wp/discord/components/common/index";
 import { useStateFromStores } from "@moonlight-mod/wp/discord/packages/flux";
 import Moonbase from "@moonlight-mod/wp/moonbase_moonbase";
+import React from "@moonlight-mod/wp/react";
+import Settings from "@moonlight-mod/wp/settings_settings";
+import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
 
-import SnippetsPage from "./pages/snippets";
 import SettingsPage from "./pages/settings";
+import SnippetsPage from "./pages/snippets";
 
 // functions
 const { setSection, clearSubsection } = spacepack.findByExports(
