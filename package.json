@@ -8,25 +8,22 @@
     "repo": "node repo.mjs",
     "format": "prettier -w src/**/*.{ts,tsx} || true"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@electron/asar": "^3.2.8",
     "@moonlight-mod/esbuild-config": "github:moonlight-mod/esbuild-config",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
+    "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types",
     "esbuild": "^0.19.3",
     "esbuild-copy-static-files": "^0.1.0",
-    "eslint": "^8.55.0",
     "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.1.0"
   },
   "dependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@moonlight-mod/types": "github:moonlight-mod/moonlight#develop&path:packages/types",
     "ace-builds": "^1.37.4",
-    "nests": "^2.3.1",
-    "react-ace": "^13.0.0"
+    "react-ace": "^13.0.0",
+    "nests": "^2.3.1"
   }
 }
