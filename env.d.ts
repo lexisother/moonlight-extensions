@@ -19,3 +19,13 @@ declare module "@moonlight-mod/wp/topaz_storage" {
   export { useNest } from "nests/react";
   export default nest as _nests.Nest<Settings>;
 }
+
+declare module "@moonlight-mod/wp/nests_nests" {
+  import _nests from "nests";
+  export { useNest } from "nests/react";
+
+  export function makeNest<T>(
+    pluginId: string,
+    defaultValue: T
+  ): _nests.Nest<T>;
+}
